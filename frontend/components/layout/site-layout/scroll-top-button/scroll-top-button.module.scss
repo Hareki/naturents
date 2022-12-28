@@ -1,0 +1,27 @@
+@import '../../../../styles/abstracts/mixins.scss';
+@import '../../../../styles/abstracts/variables.scss';
+
+.scroll-top-wrapper[class] {
+    transition: all $header-and-scroll-top $bounce-back-function-1;
+
+    position: fixed;
+    bottom: 3.6rem;
+    right: 3.6rem;
+}
+.scroll-top[class] {
+    border: none;
+    z-index: 100;
+    transition: all $header-and-scroll-top ease-in-out;
+
+    svg[class] {
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(3.2rem);
+    pointer-events: none;
+    user-select: none;
+}

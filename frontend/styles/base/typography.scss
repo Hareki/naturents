@@ -1,0 +1,46 @@
+@import '../abstracts/variables.scss';
+
+html {
+  font-size: (10/16) * 100%;
+  @media screen and (max-width: 1600px) {
+    font-size: (9/16) * 100%;
+  }
+}
+
+body {
+  font-family: 'SVN-Rubik', sans-serif;
+  font-weight: 400;
+  font-size: $default-font-size;
+  line-height: 1;
+  color: $color-primary-text;
+}
+
+.primary-heading {
+  color: $color-black;
+  font-size: 5.8rem;
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 3.2rem;
+}
+
+.secondary-heading {
+  font-weight: 600;
+  color: $color-black;
+  font-size: 4.4rem;
+  line-height: 1.2;
+}
+
+.tertiary-heading {
+  font-weight: 600;
+  color: $color-black;
+  font-size: 3.2rem;
+  line-height: 1.2;
+}
+
+p,
+li {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  color: $color-primary-text;
+}

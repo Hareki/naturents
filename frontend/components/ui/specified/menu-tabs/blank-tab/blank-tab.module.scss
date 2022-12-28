@@ -1,0 +1,20 @@
+@import '../../../../../styles/abstracts/mixins.scss';
+@import '../../../../../styles/abstracts/variables.scss';
+
+.blank-tab {
+    @include flex-center-vh;
+    flex-direction: column;
+    width: 100%;
+    height: 36.5rem;
+
+    p {
+        color: $color-secondary-text;
+        font-size: 2rem;
+    }
+}
+.wrapper {
+    width: 15rem;
+    height: 15rem;
+    user-select: none;
+    pointer-events: none;
+}

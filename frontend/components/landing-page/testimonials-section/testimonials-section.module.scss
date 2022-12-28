@@ -1,0 +1,76 @@
+@import '../../../../frontend/styles/abstracts/variables.scss';
+@import '../../../../frontend/styles/base/configurable-transitions.scss';
+
+.container {
+    .heading {
+        @include fade-in-hide('y', 3rem, 0.3s);
+
+        text-align: center;
+    }
+
+    .testimonial-box {
+        @include rotate-fade-hide(
+            'y',
+            70deg,
+            0.3s,
+            ease-in-out,
+            0s,
+            'box-shadow 0.3s ease-in-out'
+        );
+
+        display: flex;
+        margin-top: 32px;
+        padding-top: 0;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+
+        &[class]:hover {
+            transform: translateY(-1.2rem) scale(1.07);
+            transition: all 0.2s ease-out;
+            box-shadow: $box-shadow-medium;
+        }
+    }
+
+    &--show {
+        .heading {
+            @include fade-in-show('y');
+        }
+
+        .testimonial-box {
+            @include rotate-fade-show('y');
+        }
+    }
+
+    .testimonial {
+        margin-top: 6.4rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3.2rem;
+    }
+
+    .customer-photo {
+        border-radius: 50%;
+        margin-top: -32px;
+        margin-bottom: 2.4rem;
+    }
+
+    .name {
+        margin-bottom: 1rem;
+        color: $color-black;
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+
+    .content {
+        line-height: 1.6;
+    }
+
+    .quotes {
+        margin-top: 2rem;
+        img {
+            object-fit: fill;
+        }
+    }
+}

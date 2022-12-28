@@ -1,0 +1,85 @@
+@import '../../../../../../frontend/styles/abstracts/variables.scss';
+@import '../base-button-styles.scss';
+
+$underline-timing: 0.3s;
+$arrow-timing: 0.15s;
+
+.link-button {
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+
+    a,
+    button {
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+
+        color: $color-primary;
+        font-weight: 500;
+        text-decoration: none;
+        font-size: 2rem;
+
+        display: inline-block;
+        position: relative;
+        padding-bottom: 0.5rem;
+
+        overflow: hidden;
+
+        //Underline transition
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0.25rem;
+            background-color: $color-primary;
+            opacity: 0;
+            transition: opacity $underline-timing, transform $underline-timing;
+
+            opacity: 1;
+            transform: translate3d(-101%, 0, 0);
+        }
+    }
+
+    &:hover,
+    &:focus {
+        //Underline transition
+        & > *::after,
+        & > *::after {
+            opacity: 1;
+            transform: translate3d(0, 0.2em, 0);
+            transform: translate3d(0, 0, 0);
+        }
+        // Arrow Transition
+        svg > .arrow-head {
+            transform: translateX(3px);
+        }
+
+        svg > .arrow-body {
+            opacity: 1;
+            transform: scaleX(2);
+        }
+    }
+
+    // Arrow Transition
+    svg.arrow-icon {
+        overflow: visible;
+        width: 8px;
+        color: $color-primary;
+    }
+
+    svg > .arrow-head {
+        transform: translateX(0);
+        transition: transform $arrow-timing ease-in-out $underline-timing;
+    }
+
+    svg > .arrow-body {
+        opacity: 0;
+        transform: scaleX(1);
+        transition: transform $arrow-timing ease-in-out 0.3s,
+            opacity $arrow-timing ease-in-out 0.3s;
+    }
+}

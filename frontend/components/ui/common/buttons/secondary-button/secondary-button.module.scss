@@ -1,0 +1,10 @@
+@import '../../../../../../frontend/styles/abstracts/variables.scss';
+@import '../base-button-styles.scss';
+
+.secondary-button[class] {
+    @include base-normal-button;
+    border: 2px solid $color-primary;
+    &:hover {
+        border: 2px solid $color-primary;
+    }
+}

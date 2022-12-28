@@ -1,0 +1,65 @@
+@mixin animation-fade-in-x($animation-name, $x-value) {
+    @keyframes #{$animation-name} {
+        0% {
+            opacity: 0;
+            transform: translateX($x-value);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}
+
+@mixin animation-fade-in-y($animation-name, $y-value) {
+    @keyframes #{$animation-name} {
+        0% {
+            opacity: 0;
+            transform: translateY($y-value);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+@mixin animation-fade-in-y-merge($animation-name, $y-value, $other-transforms) {
+    @keyframes #{$animation-name} {
+        0% {
+            opacity: 0;
+            transform: #{translateY($y-value) + ' ' + $other-transforms};
+        }
+
+        100% {
+            opacity: 1;
+            transform: #{translateY(0) + ' ' + $other-transforms};
+        }
+    }
+}
+
+@mixin animation-move-in-x($animation-name, $x-value) {
+    @keyframes #{$animation-name} {
+        0% {
+            transform: translateX($x-value);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
+}
+
+@mixin animation-expand-x($animation-name, $x-value) {
+    @keyframes #{$animation-name} {
+        0% {
+            transform: scaleX(0);
+        }
+
+        100% {
+            transform: scaleX(1);
+        }
+    }
+}

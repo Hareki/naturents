@@ -1,0 +1,41 @@
+@import '../../../../styles/abstracts/mixins.scss';
+@import '../../../../styles/abstracts/variables.scss';
+
+.cart {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.cart-button {
+    @include right-buttons-header;
+    span {
+        font-weight: 400 !important;
+        color: $color-black;
+    }
+
+    &-active,
+    &:hover {
+        background-color: rgba($color-primary, 0.2) !important;
+    }
+}
+
+.expander {
+    width: 100%;
+    height: 0.5rem;
+    z-index: 1;
+    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateY(100%);
+}
+
+.cart-quick-view {
+    z-index: 10;
+    position: absolute;
+    // transform: translateY(100%);
+    bottom: -0.5rem;
+    right: 0;
+}

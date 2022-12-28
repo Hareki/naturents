@@ -1,0 +1,108 @@
+@import '../../../../frontend/styles/abstracts/variables.scss';
+@import '../../../../frontend/styles/base/configurable-transitions.scss';
+
+//Logo transiting configuration
+
+$x-value: -20rem;
+$duration: 0.3s;
+$blur: 10px;
+
+$delay-offset: 0.25s;
+$base-delay: calc(($duration - $delay-offset));
+
+.container {
+  padding: 0 10rem;
+
+  .logos {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .heading {
+    @include fade-in-hide('y', 3rem, 0.3s);
+
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 2.4rem;
+    color: $color-primary-text;
+  }
+
+  .logo {
+    &:nth-child(1) {
+      @include move-in-hide(
+        'x',
+        $x-value,
+        $duration,
+        $bounce-back-function-1,
+        #{calc($base-delay * 0)}
+      );
+    }
+
+    &:nth-child(2) {
+      @include move-in-hide(
+        'x',
+        $x-value,
+        $duration,
+        $bounce-back-function-1,
+        #{calc($base-delay * 1)}
+      );
+    }
+
+    &:nth-child(3) {
+      @include move-in-hide(
+        'x',
+        $x-value,
+        $duration,
+        $bounce-back-function-1,
+        #{calc($base-delay * 2)}
+      );
+    }
+
+    &:nth-child(4) {
+      @include move-in-hide(
+        'x',
+        $x-value,
+        $duration,
+        $bounce-back-function-1,
+        #{calc($base-delay * 3)}
+      );
+    }
+
+    &:nth-child(5) {
+      @include move-in-hide(
+        'x',
+        $x-value,
+        $duration,
+        $bounce-back-function-1,
+        #{calc($base-delay * 4)}
+      );
+    }
+
+    filter: grayscale(100%);
+    opacity: 65%;
+
+    &[class][style]:hover {
+      filter: none;
+      opacity: 1;
+      transform: translateY(-0.6rem) scale(1.1);
+      transition: all 0.2s ease-in;
+    }
+
+    img {
+      object-fit: fill;
+    }
+  }
+
+  &--show {
+    .heading {
+      @include fade-in-show('y');
+    }
+
+    .logo[class][style] {
+      @include move-in-show('x');
+    }
+  }
+}

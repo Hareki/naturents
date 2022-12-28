@@ -1,0 +1,143 @@
+//*FADE IN
+@mixin fade-in-hide(
+    $direction: 'x',
+    $value,
+    $duration,
+    $cubic-bezier: ease-in-out,
+    $delay: 0s,
+    $other-transitions: '',
+    $other-transforms: ''
+) {
+    transition: transform $duration $cubic-bezier $delay,
+        opacity $duration $cubic-bezier $delay #{', ' + $other-transitions};
+
+    @media (prefers-reduced-motion) {
+        transition: none;
+    }
+
+    @if ($direction == 'x') {
+        transform: translateX($value) #{$other-transforms};
+    } @else if($direction == 'y') {
+        transform: translateY($value) #{$other-transforms};
+    }
+
+    opacity: 0;
+}
+@mixin fade-in-show($direction, $other-transforms: '', $isImportant: false) {
+    $important: '';
+    @if ($isImportant) {
+        $important: '!important';
+    }
+    @if ($direction == 'x') {
+        transform: translateX(0) #{$other-transforms $important};
+    } @else if($direction == 'y') {
+        transform: translateY(0) #{$other-transforms $important};
+    }
+
+    opacity: 1 #{$important};
+}
+
+//*MOVE IN
+//Hiện tại thì khác mỗi fade-in là không có opacity...
+//Nhưng vẫn tách riêng để dễ tuỳ chỉnh thêm sau này + hàm đã có quá nhiều tham số rồi
+@mixin move-in-hide(
+    $direction: 'x',
+    $value,
+    $duration,
+    $cubic-bezier: ease-in-out,
+    $delay: 0s,
+    $other-transitions: '',
+    $other-transforms: ''
+) {
+    transition: transform $duration $cubic-bezier $delay,
+        opacity $duration $cubic-bezier $delay #{', ' + $other-transitions};
+
+    @media (prefers-reduced-motion) {
+        transition: none;
+    }
+
+    @if ($direction == 'x') {
+        transform: translateX($value) #{$other-transforms};
+    } @else if($direction == 'y') {
+        transform: translateY($value) #{$other-transforms};
+    }
+}
+@mixin move-in-show($direction, $other-transforms: '') {
+    @if ($direction == 'x') {
+        transform: translateX(0) #{$other-transforms};
+    } @else if($direction == 'y') {
+        transform: translateY(0) #{$other-transforms};
+    }
+}
+
+//*SCALE
+@mixin scale-fade-hide(
+    $direction,
+    $value: 0,
+    $duration,
+    $cubic-bezier: ease-in-out,
+    $delay: 0s,
+    $other-transitions: '',
+    $other-transforms: ''
+) {
+    transition: transform $duration $cubic-bezier $delay,
+        opacity $duration $cubic-bezier $delay #{', ' + $other-transitions};
+
+    @media (prefers-reduced-motion) {
+        transition: none;
+    }
+
+    @if ($direction == 'x') {
+        transform: scaleX($value) #{$other-transforms};
+    } @else if($direction == 'y') {
+        transform: scaleY($value) #{$other-transforms};
+    } @else if($direction == 'both') {
+        transform: scale($value) #{$other-transforms};
+    }
+
+    opacity: 0;
+}
+@mixin scale-fade-show($direction: 'both', $other-transforms: '') {
+    @if ($direction == 'x') {
+        transform: scaleX(1) #{$other-transforms};
+    } @else if($direction == 'y') {
+        transform: scaleY(1) #{$other-transforms};
+    } @else if($direction == 'both') {
+        transform: scale(1) #{$other-transforms};
+    }
+    opacity: 1;
+}
+
+@mixin rotate-fade-hide(
+    $direction,
+    $value: 0,
+    $duration,
+    $cubic-bezier: ease-in-out,
+    $delay: 0s,
+    $other-transitions: '',
+    $other-transforms: ''
+) {
+    transition: transform $duration $cubic-bezier $delay,
+        opacity $duration $cubic-bezier $delay #{', ' + $other-transitions};
+
+    @media (prefers-reduced-motion) {
+        transition: none;
+    }
+
+    @if ($direction == 'x') {
+        transform: rotateX($value) #{$other-transforms};
+    } @else if($direction == 'y') {
+        transform: rotateY($value) #{$other-transforms};
+    }
+
+    opacity: 0;
+}
+@mixin rotate-fade-show($direction, $other-transforms: '') {
+    @if ($direction == 'x') {
+        transform: rotateX(0) #{$other-transforms};
+    } @else if($direction == 'y') {
+        transform: rotateY(0) #{$other-transforms};
+    }
+
+    opacity: 1;
+}

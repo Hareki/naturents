@@ -1,0 +1,89 @@
+@import '../../../../frontend/styles/abstracts/variables.scss';
+@import '../../../../frontend/styles/base/configurable-transitions.scss';
+
+$large-image-ratio: 264/290; //large image width / large image heigh
+$small-image-ratio: 1; //small image width / small image heigh (244/244)
+$large-small-width-ratio: 264/244; //large image width / small image width
+
+$base-width-percent: 80;
+
+$large-image-width-percent: calc($base-width-percent * $large-small-width-ratio) *
+    1%;
+$small-image-width-percent: $base-width-percent * 1%;
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3.2rem;
+    margin-bottom: 14rem;
+
+    .image-grid {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .image-wrapper {
+        overflow: hidden;
+        border-radius: $default-border-radius;
+
+        &:nth-child(1),
+        &:nth-child(4) {
+            width: $large-image-width-percent;
+            aspect-ratio: $large-image-ratio;
+        }
+
+        &:nth-child(2),
+        &:nth-child(3) {
+            width: $small-image-width-percent;
+            aspect-ratio: $small-image-ratio;
+        }
+
+        &:nth-child(-n + 2) {
+            align-self: end;
+        }
+
+        &:nth-child(2n) {
+            justify-self: start;
+        }
+
+        &:nth-child(2n + 1) {
+            justify-self: end;
+        }
+    }
+
+    .content {
+        @include fade-in-hide('x', -5rem, 0.3s);
+
+        h2 {
+            margin-bottom: 3.6rem;
+        }
+
+        p {
+            &:not(:last-child) {
+                margin-bottom: 2.4rem;
+            }
+        }
+    }
+
+    .image {
+        @include scale-fade-hide('both', 0, 0.3s);
+        transition: transform 0.3s;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    &--show {
+        .content {
+            @include fade-in-show('x');
+        }
+        .image {
+            @include scale-fade-show('both');
+        }
+    }
+}

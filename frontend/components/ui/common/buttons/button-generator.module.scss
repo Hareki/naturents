@@ -1,0 +1,12 @@
+@import './base-button-styles.scss';
+
+.base-normal-button {
+    @include base-normal-button;
+    padding: 0;
+    cursor: pointer;
+}
+
+.link {
+    color: inherit;
+    text-decoration: none;
+}

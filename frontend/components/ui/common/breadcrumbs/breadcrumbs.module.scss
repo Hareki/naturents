@@ -1,0 +1,25 @@
+@import '../../../../styles/abstracts/variables.scss';
+
+.breadcrumbs {
+    :global(.MuiBreadcrumbs-separator) {
+        color: currentColor;
+        font-size: small;
+    }
+}
+
+.link {
+    text-decoration: none;
+    color: $color-primary-text;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s ease;
+
+    &[href]:hover {
+        color: $color-primary;
+    }
+}
+
+.selected {
+    color: $color-primary;
+}

@@ -1,0 +1,14 @@
+@import '../../../../../../frontend/styles/abstracts/variables.scss';
+@import '../../../../../../frontend/styles/abstracts/mixins.scss';
+@import '../base-button-styles.scss';
+
+.icon-button[class] {
+    @include flex-center-vh;
+    @include base-icon-button;
+    background-color: $color-primary;
+    color: $color-primary;
+
+    &:hover {
+        background-color: $color-primary-dark;
+    }
+}

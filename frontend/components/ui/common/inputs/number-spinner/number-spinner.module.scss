@@ -1,0 +1,47 @@
+@import '../../../../../styles/abstracts/variables.scss';
+
+.input-number {
+    width: 14rem;
+    height: 5.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid $color-mui-border;
+    border-radius: $default-border-radius;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+
+    &:focus-within {
+        border: 2px solid $color-primary !important;
+    }
+
+    input {
+        border: none;
+        outline: none;
+        width: 4rem;
+        font-size: 1.6rem;
+        text-align: center;
+        height: inherit;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            margin: 0;
+            appearance: none;
+        }
+        &[type='number'] {
+            appearance: textfield;
+        }
+    }
+
+    button {
+        transition: all 0.3s ease-in-out;
+        svg {
+            width: 2rem;
+            fill: $color-grey-500 !important;
+
+            &:hover {
+                fill: $color-primary !important;
+            }
+        }
+    }
+}

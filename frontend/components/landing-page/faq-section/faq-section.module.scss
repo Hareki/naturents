@@ -1,0 +1,46 @@
+@import '../../../../frontend/styles/base/configurable-transitions.scss';
+@import '../../../../frontend/styles/abstracts/variables.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    strong {
+        font-weight: 600;
+    }
+
+    p,
+    li {
+        font-size: 1.6rem;
+    }
+
+    .questions {
+        width: 75%;
+    }
+
+    .heading {
+        @include fade-in-hide('y', 5rem, 0.4s);
+        margin-bottom: 6.4rem;
+    }
+
+    .accordion[class] {
+        &:nth-child(2n) {
+            @include fade-in-hide('x', 15rem, 0.4s);
+        }
+
+        &:nth-child(2n + 1) {
+            @include fade-in-hide('x', -15rem, 0.4s);
+        }
+    }
+
+    &--show {
+        .heading {
+            @include fade-in-show('y');
+        }
+
+        .accordion {
+            @include fade-in-show('x', '', true);
+        }
+    }
+}

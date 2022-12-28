@@ -1,0 +1,6 @@
+@import '../../../../../../frontend/styles/abstracts/variables.scss';
+@import '.././base-button-styles.scss';
+
+.primary-button[class] {
+    @include base-normal-button;
+}

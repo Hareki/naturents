@@ -1,0 +1,11 @@
+@import '../../../../../../frontend/styles/abstracts/variables.scss';
+@import '../../../../../../frontend/styles/abstracts/mixins.scss';
+
+.tab-link {
+    @include tab-link;
+}
+
+.tab-content {
+    display: flex;
+    gap: 3rem;
+}

@@ -1,0 +1,56 @@
+@import '../../../../frontend/styles/abstracts/variables.scss';
+@import '../../../../frontend/styles/base/configurable-transitions.scss';
+
+.container {
+    position: relative;
+    margin-bottom: -5.2rem;
+
+    .heading {
+        @include fade-in-hide('y', 5rem, 0.3s, ease-in-out, 0.1s);
+    }
+
+    .tab-link {
+        @include fade-in-hide('y', 5rem, 0.3s, ease-in-out, 0.1s);
+        display: flex;
+        margin: 3.2rem 0 4.8rem 0;
+
+        &::before {
+            content: '';
+            margin-left: auto;
+        }
+    }
+
+    .tab-content {
+        @include scale-fade-hide('both', 0.5, 0.4s);
+    }
+
+    .button-wrapper {
+        @include fade-in-hide('y', -5rem, 0.3s, ease-in-out, 0.1s);
+
+        margin-top: 5.4rem;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    &--show {
+        .heading {
+            @include fade-in-show('y');
+        }
+
+        .tab-link {
+            @include fade-in-show('y');
+        }
+
+        .tab-content {
+            @include scale-fade-show('both');
+        }
+        .button-wrapper {
+            @include fade-in-show('y');
+        }
+    }
+}
+
+.content {
+    display: flex;
+    gap: 3rem;
+}

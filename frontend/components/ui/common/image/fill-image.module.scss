@@ -1,0 +1,7 @@
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    img {
+        object-fit: cover;
+    }
+}

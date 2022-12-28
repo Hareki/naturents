@@ -1,0 +1,50 @@
+@import '../../../../styles/abstracts/variables.scss';
+
+.cart-item {
+    cursor: pointer;
+    border-radius: $default-border-radius;
+    display: grid;
+    grid-template-columns: 6rem 1fr;
+    // border-bottom: 1px solid $color-divider;
+    column-gap: 1.2rem;
+    align-items: center;
+
+    padding: 1.2rem;
+
+    transition: all 0.2s ease-in-out;
+    &:hover {
+        background-color: rgba($color-primary, 0.2);
+    }
+}
+
+.info-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.img {
+    width: 6rem;
+    height: 6rem;
+    border-radius: $default-border-radius;
+    overflow: hidden;
+}
+
+.name {
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.price {
+    color: $color-primary-dark;
+    font-size: 1.4rem;
+}
+
+.quantity {
+    margin-left: 0.8rem;
+    font-size: 1.4rem;
+    color: $color-secondary-text;
+    &::before {
+        content: 'x';
+    }
+}

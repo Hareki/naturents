@@ -1,0 +1,17 @@
+@import '../../../../styles/abstracts/variables.scss';
+@import '../../../../styles/abstracts/mixins.scss';
+
+@include menu-panel-transitions;
+
+.section {
+    margin: 10rem auto;
+    min-height: calc(100vh - $header-height - 20rem);
+}
+
+.tab-content {
+    & :global(.transition-content) {
+        display: flex;
+        gap: 3rem;
+        flex-wrap: wrap;
+    }
+}

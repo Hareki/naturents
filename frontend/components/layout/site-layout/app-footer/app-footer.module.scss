@@ -1,0 +1,125 @@
+@import '../../../../styles/abstracts/variables.scss';
+
+.footer {
+    border-top: 1px solid $color-divider;
+    line-height: 0;
+    margin: 0;
+    background-color: $color-footer;
+    display: flex;
+    justify-content: center;
+    padding: 6.4rem 0;
+
+    a {
+        color: $color-primary-text;
+        text-decoration: none;
+        transition: all 0.3s;
+        &:hover {
+            color: $color-primary;
+        }
+    }
+}
+
+.area-1 {
+    width: 35%;
+    padding-right: 6.4rem;
+    h3 {
+        color: $color-primary-text;
+        margin-bottom: 1.2rem;
+    }
+}
+
+.contact-info {
+    height: 100%;
+    display: flex;
+    gap: 2.4rem;
+    flex-direction: column;
+}
+
+.logo-wrapper[class] {
+    width: fit-content;
+    position: relative;
+    display: flex;
+    gap: 1.6rem;
+    align-items: center;
+    text-decoration: none;
+
+    img {
+        object-fit: fill;
+        position: relative !important;
+    }
+    p {
+        user-select: none;
+        font-weight: 500;
+        font-size: 4.4rem;
+        color: $color-primary-text;
+    }
+}
+
+.address-phone {
+    margin-bottom: auto;
+
+    & > *:not(:last-child) {
+        margin-bottom: 1.2rem;
+    }
+}
+.media {
+    display: flex;
+    gap: 2.4rem;
+
+    svg {
+        width: 3rem;
+        height: 3rem;
+    }
+}
+
+.info-text,
+.copyright {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    color: $color-primary-text;
+    text-decoration: none;
+    line-height: 1.8;
+    width: fit-content;
+}
+
+.info-text {
+    svg {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.8rem;
+    }
+}
+
+.copyright {
+    font-size: 1.6rem;
+    color: $color-disabled-text;
+    svg {
+        width: 1.3rem;
+        height: 1.3rem;
+        margin-right: 0.8rem;
+    }
+}
+
+.area-2 {
+    width: 30%;
+    max-width: 50rem;
+    h3 {
+        color: $color-primary-text;
+        margin-bottom: 3.6rem;
+    }
+}
+
+.opening-hours {
+    display: flex;
+    flex-direction: column;
+}
+
+.opening-hour {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid $color-grey-200;
+}

@@ -1,0 +1,7 @@
+@import '../../../../../frontend/styles/abstracts/variables.scss';
+
+.wrapper {
+    div[class^='MuiPaper-root'] {
+        border-radius: $default-border-radius;
+    }
+}

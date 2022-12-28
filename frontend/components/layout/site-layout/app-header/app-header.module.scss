@@ -1,0 +1,108 @@
+@import '../../../../styles/abstracts/variables.scss';
+@import '../../../../styles/abstracts/mixins.scss';
+
+.header {
+    animation: navbar-pop-in $header-and-scroll-top $bounce-back-function-1;
+    transition: all $header-and-scroll-top ease;
+    background-color: $color-header-in;
+    backdrop-filter: saturate(180%) blur(4px);
+    z-index: 999;
+    position: sticky;
+
+    &--sticky {
+        animation: navbar-pop-out $header-and-scroll-top $bounce-back-function-1;
+        top: 0;
+        box-shadow: $box-shadow-separator;
+        background-color: $color-header-out;
+    }
+}
+
+.container {
+    height: $header-height;
+    margin: 0 auto;
+    max-width: 120rem;
+    padding: 0 3.2rem;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+    }
+    li {
+        list-style: none;
+    }
+
+    .cta-button {
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+}
+
+.right-buttons {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+
+    .account {
+        @include right-buttons-header;
+        border: 2px solid $color-black;
+        font-weight: 500;
+    }
+}
+
+.logo-wrapper {
+    width: fit-content;
+    position: relative;
+    display: flex;
+    gap: 1.6rem;
+    align-items: center;
+    text-decoration: none;
+
+    img {
+        object-fit: fill;
+        position: relative !important;
+    }
+    p {
+        user-select: none;
+        font-weight: 500;
+        font-size: 3.6rem;
+        color: $color-primary-text;
+    }
+}
+
+@keyframes navbar-pop-out {
+    //threshold * 1.25 (scroll threshold in px) / 80 (header height in px)
+    // = 78.125
+    0% {
+        transform: translateY(-46.875%);
+        // opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        // opacity: 1;
+    }
+}
+
+@keyframes navbar-pop-in {
+    0% {
+        transform: translateY(0);
+        top: 0;
+    }
+    50% {
+        transform: translateY(-2rem);
+        top: 0;
+    }
+    100% {
+        transform: translateY(0);
+        top: 0;
+    }
+}

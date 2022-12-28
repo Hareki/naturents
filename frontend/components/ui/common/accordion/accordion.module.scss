@@ -1,0 +1,59 @@
+@import '../../../../../frontend/styles/abstracts/variables.scss';
+
+.accordion[class] {
+    border-radius: $default-border-radius;
+    box-shadow: $box-shadow-low;
+    margin-bottom: 2.4rem;
+    padding: 1.2rem 2.4rem;
+
+    h3 {
+        color: $color-black;
+        transition: all 0.3s;
+    }
+
+    div[class~='MuiAccordionSummary-root']:hover h3 {
+        color: $color-primary;
+    }
+
+    div[class~='MuiButtonBase-root'] {
+        //get rid of focus state
+        background-color: transparent;
+    }
+
+    &::before {
+        height: 0;
+    }
+
+    svg {
+        width: 2.5rem;
+        height: 2.5rem;
+        color: $color-primary;
+    }
+
+    p {
+        color: $color-primary-text;
+
+        &:not(:last-child) {
+            margin-bottom: 1.6rem;
+        }
+    }
+
+    li {
+        margin-left: 3.6rem;
+
+        color: $color-primary-text;
+        &:not(:last-child) {
+            margin-bottom: 1.2rem;
+        }
+    }
+
+    h3 {
+        font-weight: 500;
+        font-size: 1.8rem;
+    }
+
+    a {
+        color: $color-primary;
+        font-weight: 500;
+    }
+}

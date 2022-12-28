@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*:focus-visible:not(input, select, textarea) {
+  outline: 0;
+  box-shadow: 0 0 0 0.35rem rgba($color-primary, 0.5);
+}
+
+html {
+  color: $color-black;
+  background-color: $color-background;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-size: 100%;
+  font-family: inherit;
+  line-height: 1.15;
+  color: $color-black;
+}
+
+.section {
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 14rem auto 0;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  border-radius: 500px;
+  background-color: #e5e8eb;
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 500px;
+  background-color: #bcc0c4;
+}

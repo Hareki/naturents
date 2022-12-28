@@ -1,0 +1,36 @@
+@import '../../../../../frontend/styles/abstracts/variables.scss';
+
+@mixin base-normal-button {
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: $default-border-radius;
+
+    //For buttons with icons
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 0.4rem 1.4rem;
+
+    svg {
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+}
+
+@mixin base-icon-button {
+    cursor: pointer;
+    border-radius: 50%;
+    width: 4.4rem;
+    height: 4.4rem;
+
+    svg {
+        border: none;
+        width: 2.4rem;
+        height: 2.4rem;
+        color: $color-white;
+    }
+}

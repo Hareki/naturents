@@ -1,0 +1,17 @@
+@import '../../../../../../frontend/styles/abstracts/variables.scss';
+@import '../../../../../../frontend/styles/abstracts/mixins.scss';
+@import '.././base-button-styles.scss';
+
+.icon-button[class] {
+    @include flex-center-vh;
+    @include base-icon-button;
+    background-color: transparent;
+
+    &:hover {
+        background-color: rgba($color: $color-grey-100, $alpha: 0.6);
+        color: $color-primary; // make hovering and clicking have green background (MUI)
+        svg {
+            color: $color-primary;
+        }
+    }
+}

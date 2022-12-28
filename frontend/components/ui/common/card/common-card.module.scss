@@ -1,0 +1,8 @@
+@import '../../../../../frontend/styles/abstracts/variables.scss';
+
+.card {
+    background-color: #fff;
+    box-shadow: $box-shadow-low;
+    border-radius: $default-border-radius;
+    padding: 2.4rem;
+}

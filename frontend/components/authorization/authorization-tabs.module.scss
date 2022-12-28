@@ -1,0 +1,171 @@
+@import '../../../frontend/styles/abstracts/variables.scss';
+
+$tab-links-height: 5.2rem;
+$resizing-height-duration: 0.2s;
+$opacity-duration: 0.1s;
+.tabs {
+    width: 50rem;
+    transition: all 0.3s;
+    overflow: hidden;
+}
+
+.tab-links {
+    margin-top: 0.5rem;
+    transition: all 0.3s;
+
+    display: flex;
+    align-items: stretch;
+    gap: 3rem;
+
+    background-color: $color-white;
+    padding: 0 2.4rem;
+    height: $tab-links-height;
+    border-bottom: 2px solid $color-grey-200;
+
+    .tab-link {
+        position: relative;
+        display: flex;
+        gap: 0.8rem;
+        align-items: center;
+        background-color: transparent;
+        transition: all 0.3s;
+
+        font-size: 1.8rem;
+        font-weight: 400;
+        padding: 0 0.8rem;
+        color: $color-primary-text;
+
+        svg {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        &:hover {
+            color: $color-primary;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%) translateY(2px);
+            height: 2px;
+            background-color: $color-primary;
+            border-radius: 500px;
+            width: 0;
+
+            transition: all $resizing-height-duration + $opacity-duration * 2
+                ease-in-out;
+        }
+
+        &:nth-child(2) {
+            margin-right: auto;
+        }
+
+        &--active {
+            color: $color-primary;
+
+            &::before {
+                width: calc(100% - 1.5rem);
+            }
+        }
+    }
+
+    .close-button {
+        align-self: center;
+        width: 3.2rem;
+        height: 3.2rem;
+        &:hover {
+            background-color: rgba($color: $color-grey-100, $alpha: 1);
+        }
+        svg {
+            width: 2.8rem;
+            height: 2.8rem;
+            fill: $color-grey-500;
+        }
+    }
+}
+
+.tab-panels {
+    position: relative;
+    // padding: 2.4rem 2.4rem;
+    width: 100%;
+}
+
+// .tab-panel {
+// }
+
+$sign-in-height: 32.843rem;
+$sign-up-height: 54.4rem;
+
+.panel-enter {
+    transform: translateX(3rem);
+    .sign-up-wrapper,
+    .sign-in-wrapper {
+        opacity: 0;
+    }
+    .sign-in-wrapper {
+        height: $sign-up-height;
+    }
+
+    .sign-up-wrapper {
+        height: $sign-in-height;
+    }
+}
+
+.panel-enter-active {
+    height: auto; //Some how it fixed the '1 tick glitch' problem?
+    transform: translateX(0);
+    transition: all $opacity-duration ease-in-out $resizing-height-duration;
+
+    .sign-up-wrapper,
+    .sign-in-wrapper {
+        opacity: 1;
+        width: 100%;
+        transition: inherit;
+    }
+    .sign-up-wrapper {
+        height: $sign-up-height;
+        animation: sign-up-transition $resizing-height-duration ease-in-out;
+    }
+    .sign-in-wrapper {
+        height: $sign-in-height;
+        animation: sign-in-transition $resizing-height-duration ease-in-out;
+    }
+}
+
+.panel-enter-done {
+    .sign-in-wrapper {
+        height: $sign-in-height;
+        overflow: hidden;
+    }
+}
+
+.panel-exit-active {
+    opacity: 0;
+    transform: translateX(-3rem);
+    transition: all $opacity-duration ease-in-out;
+}
+
+//Hardcoded height to do the trick, but it's worth!
+
+@keyframes sign-up-transition {
+    0% {
+        height: $sign-in-height;
+    }
+
+    100% {
+        height: $sign-up-height;
+    }
+}
+
+@keyframes sign-in-transition {
+    0% {
+        height: $sign-up-height;
+    }
+
+    100% {
+        height: $sign-in-height;
+    }
+}

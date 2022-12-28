@@ -1,0 +1,68 @@
+// ?COLORS
+$color-primary: #3bb77e;
+$color-primary-light: #62c598;
+$color-primary-dark: #35a571;
+
+$color-secondary: #ef5da8;
+$color-secondary-dark: #bf4a86;
+$color-secondary-light: #f27db9;
+
+$color-red: #eb4d4b;
+$color-yellow: hsl(48, 100%, 50%);
+
+$color-primary-text: #4e5162;
+$color-secondary-text: #7e8198;
+$color-disabled-text: #b8b9c6;
+
+$color-white: #fff;
+$color-grey-50: #f3f5f9;
+$color-grey-100: #eaeaed;
+$color-grey-200: #d5d5dc;
+$color-grey-300: #bfc1ca;
+$color-grey-400: #aaacb8;
+$color-grey-500: #9597a7;
+$color-grey-600: #808295;
+$color-grey-700: #6b6d83;
+$color-grey-800: #555971;
+$color-black: #2b2f4e;
+
+$color-background: #fbfbfd;
+$color-footer: rgb(246, 246, 249);
+$color-header-in: rgba(
+    $color: #e1eeda,
+    $alpha: 1,
+);
+$color-header-out: rgba(
+    $color: #e1eeda,
+    $alpha: 0.8,
+);
+
+$color-divider: rgba($color-black, 0.12);
+$color-mui-border: rgba(0, 0, 0, 0.23);
+
+// ?BORDER RADIUS
+$default-border-radius: 10px;
+$large-border-radius: 20px;
+
+// ?FONT-SIZE
+$default-font-size: 1.6rem;
+
+// ?BOX-SHADOW
+$box-shadow-low: 0px 10px 15px -3px rgba($color-black, 0.1),
+    0px 4px 6px -2px rgba($color-black, 0.05);
+$box-shadow-medium: 0px 20px 25px -5px rgba($color-black, 0.1),
+    0px 10px 10px -5px rgba($color-black, 0.04);
+$box-shadow-high: 0px 25px 50px -12px rgba($color-black, 0.25);
+
+$box-shadow-separator: 0 0.25rem 0.5625rem -0.0625rem rgb(0 0 0 / 3%),
+    0 0.275rem 1.25rem -0.0625rem rgb(0 0 0 / 5%);
+
+// ?SHARED ANIMATION TIMING
+$header-and-scroll-top: 0.5s;
+
+// ?CUBIC-BEZIER-1
+$bounce-back-function-1: cubic-bezier(0.34, 1.56, 0.64, 1);
+$bounce-back-function-2: cubic-bezier(0.8, 0.5, 0.2, 1.4);
+
+// ?HEADER HEIGHT
+$header-height: 8rem;
